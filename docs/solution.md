@@ -1,25 +1,15 @@
-# Max Rectangle Algorithm
-Calculate the max rectangle that can be inserted into container rectangle with embedded rectangles
+# Max Rectangle Algorithm Solution
+I will describe three ways to solve this problem.
 
-## The Problem:
-Given a container rectangle (I will simply call it "container") and a set of rectangles we need to calculate the maximum rectangle that we can add to the container without intersecting the container or any embedded rectangles.
+## My Assumptions:
+For all the algorithms that are presented here I offer to do the following pre-processing actions:
+1. Since we are interested and affected only by what happens inside the container, we will trim all the rectangles that are fully or partially located outside the container:
+2. Personally I prefer working where the container always starts at (0,0). This is acheived simply by shifting the container and the rectangles in the X and Y axises and shiting back the result.
 
-The following image illustrates the problem:
+## Solution 1: Brute Force (^2)
+The first solution is to divide 
 
-#### Remarks:
-- We use the Y-inverted axis system where the upper-left corner is marked as 0,0 and x is growing while moving to the left and y is growing while moving down.
-- The rectangles (including the container) are expressed as 4 integers Rect=(l, r, t, b) 
-where: 
-l is the left x coordinate
-r is the right x coordinate
-t is the top y coordinate
-b is the bottom y coordinate
 
-- Each rectangle can be placed anywhere (even with negative coordinates)
-- The rectangles can be place inside or outside or intersecting each other (and the container)
+## Solution 2: Improved Brute Force
 
-## The Target:
-After placing the container and all the rectangles, find the maximum possible rectangle that can be placed with in the container while not intersecting any of the rectangles (it may touch the other rectangles)
-
-# The Solution
-[Press here for the solution!](docs/solution.md)
+## Solution 3: The Real Solution
