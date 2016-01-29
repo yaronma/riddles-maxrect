@@ -4,7 +4,9 @@ Calculate the max rectangle that can be inserted into container rectangle with e
 ## The Problem:
 Given a container rectangle (I will simply call it "container") and a set of rectangles we need to calculate the maximum rectangle that we can add to the container without intersecting the container or any embedded rectangles.
 
-The following image illustrates the problem:
+The following image illustrates the problem, where the dashed rectangle is the solution:
+![Image of Yaktocat](images/example1.png)
+
 
 #### Remarks:
 - We use the Y-inverted axis system where the upper-left corner is marked as 0,0 and x is growing while moving to the left and y is growing while moving down.
