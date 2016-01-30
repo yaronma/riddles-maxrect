@@ -105,22 +105,69 @@ In the following example we will divide upper edge E1 of rectangle R1 to three e
 ### Description of Algorithm:
 
 * Build list of all horizontal edges
+* Sort the horizontal edges list
 * _Pre-Processing:_ Replace intersecting edges with only the visible part (As described in Pre-processing action 2)
-* Sort the horizontal edges list where top edges are at the start
+* _Pre-Processing:_ Extend the lower facing edges as possible on the X axis (As described in Pre-processing action 1)
 * Add the upper container edge to the beginning of the list
 * Add the lower container edge to the end of the list
-* Build a sorted list of all vertical edges
 
-* While the list is not empty:
+* While the horizontal edges list is not empty:
    * Take the first edge (Next most higher down-facing edge)
    * Scan the full edges list 
      * If the edge is down-facing, continue to the next edge
      * If the edge is the container bottom edge. Check if we got a bigger rectangle. If yes store it
      * If the edge is up-facing
          * Check if we got a bigger rectangle. If yes store it
-         * Divide the down-facing edge with the up-facing edge and add all the remainders back to the down-facing list
-  
+         * Divide the down-facing edge with the up-facing edge and add all the remainders back to top of the list
 
+The next example illustrates the algorithm:
+
+Given the example below
+
+![Example of start of algorithm](../images/algorithm3-3.png)
+
+The algorithm execution will be:
+
+![Example of algorithm processing](../images/algorithm3-4.png)
+
+_Build list of all horizontal edges_
+The horizontal list will be:
+
+Edge | 
+------
+R1 top edge |
+R1 bottom edge |
+R2 top edge |
+R3 top edge |
+R2 bottom edge |
+R3 bottom edge |
+
+
+_Replace intersecting edges with only the visible part (As described in Pre-processing action 2)_
+
+Edge | 
+------
+R1 top edge |
+R1 bottom edge |
+R2 top edge |
+R3 top edge will be shortened to start from right of R2 |
+R2 bottom edge will be shortened to end from left of R3|
+R3 bottom edge |
+
+_Pre-Processing:_ Extend the lower facing edges as possible on the X axis (As described in Pre-processing action 1)_
+
+Edge |
+------
+R1 top edge |
+R1 bottom edge that is extended by Ex1 and Ex2 |
+R2 top edge |
+R3 top edge will be shortened to start from right of R2 |
+R2 bottom edge will be shortened to end from left of R3 extended by Ex3||
+R3 bottom edge extended by Ex4 and Ex5|
+
+
+Container top edge |  
+Container bottom edge |
 
 
 
