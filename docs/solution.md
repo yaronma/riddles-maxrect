@@ -12,15 +12,44 @@ For all the algorithms that are presented here I offer to do the following pre-p
 
 Note that actions 1 and 2 have O(n) complexity. 
 
-## Solution 1: Brute Force (^2) - Psuedo Code
+## Solution 1: Brute Force (^2) - 
+### Description:
+Divide the container into a cells of size 1x1
+Mark the maximum rectangle as size 0
+For each cell:
+- For all the rows staring from the row of the current cell and ending in the last row of the container
+- - Iterate from the cell X position to the container right edge
+- - If encountered a rectangle or the edge check new max and store coordinations
+
+### A More Mathematical Definition
+
 Divide the container into a cells of size 1x1. (This could simply acheivied by using two-dimentional array)
 
-for each cell of the container we will find the largest rectangle possible:
-- I assumt the cell is located at (Xi, Yj)
-- If the cell is inside any other rectangle skip to the next cell ( Preprocess-O(n), finding containment-O(log(n))). [I will post a seperate description of this algorithm]
+mark max-rec as size 0
+for each cell (Xi, Yj) of the container:
 
-for every line from Yj to Ycb:
-  - Scan line Yj starting with Xi+1 and ending in Xcr
+// Check that the current cell is not inside any other rectangle
+If cell (Xi, Yj) is inside a rectangle, continue to the next cell
+
+// For all the lines from the current cell to the edge of the container
+for every line Yk from Yj to Ycb:
+  // For every cell in the current row starting with the current cell x location
+  mark max_length = MAX_INTEGER
+  for every cell (Yk,Xm) from (Yk,Xi) to (Yk, Xcr)
+  
+  // Check that the next cell is not inside a rectangle
+  If cell (Yk, Xm+1) is inside a rectangle OR (m-i > max_legth)
+  
+  // We reached a cell that is inside a rectange; 
+  // Check if we encountered a new rectangle
+  if rectangle(Xi, Yj)-(Xm, Yk) > max-rec save it as max-rec
+  mark max_length = m-i
+  
+The maximum rectangle is in max-rec
+  
+  
+  
+  
   
 
 
