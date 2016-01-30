@@ -12,14 +12,16 @@ For all the algorithms that are presented here I offer to do the following pre-p
 
 Note that actions 1 and 2 have O(n) complexity. 
 
-## Solution 1: Brute Force (^2)
-Divide the container into a cells of size 1x1.
+## Solution 1: Brute Force (^2) - Psuedo Code
+Divide the container into a cells of size 1x1. (This could simply acheivied by using two-dimentional array)
 
-for each cell of the container we will find the largest rectangle:
+for each cell of the container we will find the largest rectangle possible:
 - I assumt the cell is located at (Xi, Yj)
-- If the cell is inside any other rectangle skip to the next cell (O(n*log(n)). [I will post a seperate description of this algorithm]
-- Scan line Yj starting with Xi+1 and ending in Xcr
+- If the cell is inside any other rectangle skip to the next cell ( Preprocess-O(n), finding containment-O(log(n))). [I will post a seperate description of this algorithm]
 
+for every line from Yj to Ycb:
+  - Scan line Yj starting with Xi+1 and ending in Xcr
+  
 
 
 
