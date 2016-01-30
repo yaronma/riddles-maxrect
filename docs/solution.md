@@ -16,7 +16,7 @@ Note that actions 1 and 2 have O(n) complexity.
 ### Overview
 We will scan all the cell of the container and we will check for each cell what will be the biggest possible rectangle
 
-### Description:
+### Description of Algorithm:
 Divide the container into a cells of size 1x1
 Mark the maximum rectangle as size 0
 For each cell:
@@ -63,6 +63,7 @@ For each generated point we will find the maximum rectangle where the point is t
 The following image illustrates the 'smart' grid (extended lines marked in gray)
 ![Image of Problem](../images/bf2-1.png)
 
+### Description of Algorithm:
 Build a vector of all the horizonla edges.
 Create an empty list of points (each point have x and y coordinates)
 
@@ -77,7 +78,7 @@ Start with the X axis of the point
 
 
 
-### Description:
+
 
 ### A More Mathematical Definition
 
