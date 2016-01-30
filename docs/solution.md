@@ -23,6 +23,7 @@ For each cell:
 
 ### A More Mathematical Definition
 
+```javascript
 Divide the container into a cells of size 1x1. (This could simply acheivied by using two-dimentional array)
 
 mark max-rec as size 0
@@ -46,7 +47,7 @@ for every line Yk from Yj to Ycb:
   mark max_length = m-i
   
 The maximum rectangle is in max-rec
-  
+```
   
   
   
