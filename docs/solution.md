@@ -53,7 +53,7 @@ The maximum rectangle is in max-rec
 ```
 
 ### Complexity
-The complexity of this algorithm is *O((w*h)^2)* where 'w' and 'h' are the width and height of the container.
+The complexity of this algorithm is _O((w*h)^2)_ where 'w' and 'h' are the width and height of the container.
 This algorithm can be considered as acceptable solution where m << n and h << m
 
 ## Solution 2: Improved Brute Force
@@ -78,7 +78,7 @@ add all intersecting points of the current extended edge with the previously pro
 For each point in the list of points find the largest possible rectangle the the next point is it's upper-left corner
 
 ### Complexity
-The complexity of this algorithm is *O(N^4)* Since for every point we scan maximum of O(N^2) other points
+The complexity of this algorithm is _O(N^4)_ Since for every point we scan maximum of O(N^2) other points
 
 ## Solution 3: The Real Solution
 ### Overview
@@ -193,9 +193,9 @@ while vertical edges list is not empty
 ...And so on
 
 ### Complexity
-The pre processing is *O(n*log(n))*
-The algorithm traversal is *O(N^2)*  -- In each step we scan the vertical edges list. (worst O(N)) and we do it for all vertical edges.
+The pre processing is _O(n*log(n))_
+The algorithm traversal is _O(N^2)_  -- In each step we scan the vertical edges list. (worst O(N)) and we do it for all vertical edges.
 
-O(Algorithm) = *O(n*log(n))* + *O(N^2)* = *O(N^2)*
+O(Algorithm) = _O(n*log(n))_ + _O(N^2)_ = _O(N^2)_
 
 **Note: This algorithm can be implied in any direction of scanning with minor adjustments.
