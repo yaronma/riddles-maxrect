@@ -92,10 +92,12 @@ This algorithm based on vertical swift of the lower edges of the rectangles unti
 
 We have two pre-processing actions:
 1. For all the horizontal lower edges calculate the extended edge (extend the edge on both directions of the x-axis until encountering a rectangle or the container edge.
+In the following example we will extend edge E2 of rectangle R2 to the left (Extending by E2'). We will also extend E1 of R1 in both right and left directions by E1'' and E1' respectevly
 
 ![Image of breaking edge to visible parts](../images/algorithm3-2.png)
 
-2. For all vertical rectangles, break the rectangle for the visible parts of a rectangle
+2. For all the upper horizontal edges, break the edge to the visible parts of the edge
+In the following example we will divide upper edge E1 of rectangle R1 to three edges E1', E1'', E1'''
 
 ![Image of breaking edge to visible parts](../images/algorithm3-1.png)
 
