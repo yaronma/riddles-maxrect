@@ -103,11 +103,25 @@ In the following example we will divide upper edge E1 of rectangle R1 to three e
 ![Image of breaking edge to visible parts](../images/algorithm3-1.png)
 
 ### Description of Algorithm:
-* Build a sorted list of all top horizontal edges
-* Replace intersecting edges with only the visible part (As described in Pre-processing action 2)
-* Build a sorted list of all bottom horizontal edges
+
+* Build list of all horizontal edges
+* _Pre-Processing:_ Replace intersecting edges with only the visible part (As described in Pre-processing action 2)
+* Sort the horizontal edges list where top edges are at the start
+* Add the upper container edge to the beginning of the list
+* Add the lower container edge to the end of the list
 * Build a sorted list of all vertical edges
 
+* While the list is not empty:
+   * Take the first edge (Next most higher down-facing edge)
+   * Scan the full edges list 
+     * If the edge is down-facing, continue to the next edge
+     * If the edge is the container bottom edge. Check if we got a bigger rectangle. If yes store it
+     * If the edge is up-facing
+         * Check if we got a bigger rectangle. If yes store it
+         * Divide the down-facing edge with the up-facing edge and add all the remainders back to the down-facing list
+  
 
 
-**Note: A algorithm can be implied in any direction of scanning with minor adjustments
+
+
+**Note: This algorithm can be implied in any direction of scanning with minor adjustments.
