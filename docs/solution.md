@@ -94,7 +94,9 @@ We have two pre-processing actions:
 1. For all the horizontal lower edges calculate the extended edge (extend the edge on both directions of the x-axis until encountering a rectangle or the container edge.
 
 ![Image of breaking edge to visible parts](../images/algorithm3-2.png)
+
 2. For all vertical rectangles, break the rectangle for the visible parts of a rectangle
 
 ![Image of breaking edge to visible parts](../images/algorithm3-1.png)
+
 ### Description of Algorithm:
