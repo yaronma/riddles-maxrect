@@ -91,14 +91,23 @@ For each point in the list of points:
 This algorithm based on vertical swift of the lower edges of the rectangles until encountering a top edge or part of it.
 
 We have two pre-processing actions:
-* For all the horizontal lower edges calculate the extended edge (extend the edge on both directions of the x-axis until encountering a rectangle or the container edge.
-In the following example we will extend edge E2 of rectangle R2 to the left (Extending by E2'). We will also extend E1 of R1 in both right and left directions by E1'' and E1' respectevly
+
+*Pre-Processing Action 1:* For all the horizontal lower edges calculate the extended edge (extend the edge on both directions of the x-axis until encountering a rectangle or the container edge).
+In the following example we will extend edge E2 of rectangle R2 to the left (Extending by E2'). We will also extend E1 of R1 in both right and left directions by E1'' and E1' respectevly.  (There are more edges to process on the example)
 
 ![Image of breaking edge to visible parts](../images/algorithm3-2.png)
 
-* For all the upper horizontal edges, break the edge to the visible parts of the edge
-In the following example we will divide upper edge E1 of rectangle R1 to three edges E1', E1'', E1'''
+*Pre-Processing Action 2:* For all the upper horizontal edges, break the edge to the visible parts of the edge
+In the following example we will divide upper edge E1 of rectangle R1 to three edges E1', E1'', E1'''. (There are more edges to process on the example)
 
 ![Image of breaking edge to visible parts](../images/algorithm3-1.png)
 
 ### Description of Algorithm:
+* Build  a sorted list of all top horizontal edges
+* Replace intersecting edges with only the visible part 
+* Build  a sorted list of all bottom horizontal edges
+* Build  a sorted list of all vertical edges
+
+
+
+**Note: A algorithm can be implied in any direction of scanning with minor adjustments
