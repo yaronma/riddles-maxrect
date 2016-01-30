@@ -56,6 +56,10 @@ The complexity of this algorithm is O( (w*h)^2 ) where 'w' and 'h' are the width
 This algorithm can be considered as acceptable solution where m << n and h << m
 
 ## Solution 2: Improved Brute Force
+We will build a 'smart' grid where we will extend all the edges of all the rectangles until they intersect with the container edges.
+For each generated point we will find the maximum rectangle where the point is the upper-left coordinate
+
+
 
 ### Overview
 ### Description:
