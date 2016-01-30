@@ -13,6 +13,9 @@ For all the algorithms that are presented here I offer to do the following pre-p
 Note that actions 1 and 2 have O(n) complexity. 
 
 ## Solution 1: Brute Force (^2) - 
+### Overview
+We will scan all the cell of the container and we will check for each cell what will be the biggest possible rectangle
+
 ### Description:
 Divide the container into a cells of size 1x1
 Mark the maximum rectangle as size 0
@@ -48,14 +51,16 @@ for every line Yk from Yj to Ycb:
   
 The maximum rectangle is in max-rec
 ```
-  
-  
-  
-  
 
-
-
+The complexity of this algorithm is O( (w*h)^2 ) where 'w' and 'h' are the width and height of the container.
+This algorithm can be considered as acceptable solution where m << n and h << m
 
 ## Solution 2: Improved Brute Force
+
+### Overview
+### Description:
+
+### A More Mathematical Definition
+
 
 ## Solution 3: The Real Solution
