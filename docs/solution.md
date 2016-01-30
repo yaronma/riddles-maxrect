@@ -56,15 +56,27 @@ The complexity of this algorithm is O( (w*h)^2 ) where 'w' and 'h' are the width
 This algorithm can be considered as acceptable solution where m << n and h << m
 
 ## Solution 2: Improved Brute Force
+### Overview
 We will build a 'smart' grid where we will extend all the edges of all the rectangles until they intersect with the container edges.
 For each generated point we will find the maximum rectangle where the point is the upper-left coordinate
 
 The following image illustrates the 'smart' grid (extended lines marked in gray)
 ![Image of Problem](../images/bf2-1.png)
 
+Build a vector of all the horizonla edges.
+Create an empty list of points (each point have x and y coordinates)
+
+Go over all the horizontal edges and for each edge:
+Add the two edge points to the list of points
+build the extended edge (the 'l' will be 0 and the 'r' will be the containers' 'r')
+add all intersecting points of the current extended edge with the previously processed edge to the list of points
+
+// Find the largest rectangle the the next point is it's upper-left corner
+For each point in the list of points:
+Start with the X axis of the point
 
 
-### Overview
+
 ### Description:
 
 ### A More Mathematical Definition
