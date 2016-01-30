@@ -5,6 +5,7 @@ Calculate the max rectangle that can be inserted into container rectangle with e
 Given a container rectangle (I will simply call it "container") and a set of rectangles we need to calculate the maximum rectangle that we can add to the container without intersecting the container or any embedded rectangles.
 
 The following image illustrates the problem:
+
 ![Image of Problem](images/example1.png)
 
 And the solution is:
