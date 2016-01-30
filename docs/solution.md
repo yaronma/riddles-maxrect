@@ -12,7 +12,7 @@ For all the algorithms that are presented here I offer to do the following pre-p
 
 Note that actions 1 and 2 have O(n) complexity. 
 
-## Solution 1: Brute Force (^2) - 
+## Solution 1: Grid-Based Brute Force 
 ### Overview
 We will scan all the cell of the container and we will check for each cell what will be the biggest possible rectangle
 
@@ -39,10 +39,10 @@ If cell (Xi, Yj) is inside a rectangle, continue to the next cell
 for every line Yk from Yj to Ycb:
   // For every cell in the current row starting with the current cell x location
   mark max_length = MAX_INTEGER
-  for every cell (Yk,Xm) from (Yk,Xi) to (Yk, Xcr)
+  for every cell (Xm, Yk) from (Xi, Yk) to (Xcr, Yk)
   
   // Check that the next cell is not inside a rectangle
-  If cell (Yk, Xm+1) is inside a rectangle OR (m-i > max_legth)
+  If cell (Xm+1, Yk) is inside a rectangle OR (m-i < max_legth)
   
   // We reached a cell that is inside a rectange; 
   // Check if we encountered a new rectangle
@@ -64,17 +64,20 @@ The following image illustrates the 'smart' grid (extended lines marked in gray)
 ![Image of Problem](../images/bf2-1.png)
 
 ### Description of Algorithm:
-Build a vector of all the horizonla edges.
-Create an empty list of points (each point have x and y coordinates)
+Build a vector of all the horizontal edges.
+Build a vector of all the vertical edges.
+
+For every horizontal edge build the extended edge and add all the intercepting vertical edges (create the 'virtual' points)
 
 Go over all the horizontal edges and for each edge:
 Add the two edge points to the list of points
 build the extended edge (the 'l' will be 0 and the 'r' will be the containers' 'r')
 add all intersecting points of the current extended edge with the previously processed edge to the list of points
 
-// Find the largest rectangle the the next point is it's upper-left corner
+// Find the largest possible rectangle the the next point is it's upper-left corner
 For each point in the list of points:
-Start with the X axis of the point
+* For all the points on the same edge with higer Y coordinates value
+* Start with the X axis of the point
 
 
 
@@ -84,3 +87,11 @@ Start with the X axis of the point
 
 
 ## Solution 3: The Real Solution
+### Overview
+This algorithm based on vertical swift of the lower edges of the rectangles
+
+
+
+
+
+
