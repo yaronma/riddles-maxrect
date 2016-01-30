@@ -52,7 +52,8 @@ for every line Yk from Yj to Ycb:
 The maximum rectangle is in max-rec
 ```
 
-The complexity of this algorithm is O( (w*h)^2 ) where 'w' and 'h' are the width and height of the container.
+### Complexity
+The complexity of this algorithm is *O((w*h)^2)* where 'w' and 'h' are the width and height of the container.
 This algorithm can be considered as acceptable solution where m << n and h << m
 
 ## Solution 2: Improved Brute Force
@@ -74,17 +75,10 @@ Add the two edge points to the list of points
 build the extended edge (the 'l' will be 0 and the 'r' will be the containers' 'r')
 add all intersecting points of the current extended edge with the previously processed edge to the list of points
 
-// Find the largest possible rectangle the the next point is it's upper-left corner
-For each point in the list of points:
-* For all the points on the same edge with higer Y coordinates value
-* Start with the X axis of the point
+For each point in the list of points find the largest possible rectangle the the next point is it's upper-left corner
 
-
-
-
-
-### A More Mathematical Definition
-
+### Complexity
+The complexity of this algorithm is *O(N^4)* Since for every point we scan maximum of O(N^2) other points
 
 ## Solution 3: The Real Solution
 ### Overview
@@ -120,6 +114,7 @@ In the following example we will divide upper edge E1 of rectangle R1 to three e
          * Check if we got a bigger rectangle. If yes store it
          * Divide the down-facing edge with the up-facing edge and add all the remainders back to top of the list
 
+### Sample Execution
 The next example illustrates the algorithm:
 
 Given the example below
@@ -183,5 +178,24 @@ R3 bottom edge extended by Ex4 and Ex5| Bottom |
 Container bottom edge | Top |
 
 
+The algorithm will execute the following steps:
+max_rect = 0;
+while vertical edges list is not empty
+* Take out top edge (This is the first one -- the top container edge)
+* Next edge is R1 top edge.
+  * Calculate (Xcr-Xcl)x(R1t) and store if it is bigger than previous max_rect
+  * Break top edge to three edges and insert E1' and E1'' back to the list
+* Next iteration: Take out E1'
+* Next up-facing edge is R2 top edge.
+  * Calculate (E1'r-E1'l)x(R2t) and store if it is bigger than previous max_rect
+  * Break E1' edge to three edges and insert E2' and E2''' back to the list
+
+...And so on
+
+### Complexity
+The pre processing is *O(n*log(n))*
+The algorithm traversal is *O(N^2)*  -- In each step we scan the vertical edges list. (worst O(N)) and we do it for all vertical edges.
+
+O(Algorithm) = *O(n*log(n))* + *O(N^2)* = *O(N^2)*
 
 **Note: This algorithm can be implied in any direction of scanning with minor adjustments.
