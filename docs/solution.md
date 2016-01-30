@@ -60,7 +60,7 @@ We will build a 'smart' grid where we will extend all the edges of all the recta
 For each generated point we will find the maximum rectangle where the point is the upper-left coordinate
 
 The following image illustrates the 'smart' grid (extended lines marked in gray)
-![Image of Problem](images/bf2-1.png)
+![Image of Problem](../images/bf2-1.png)
 
 
 
