@@ -143,7 +143,7 @@ R2 bottom edge |
 R3 bottom edge |
 
 
-_Replace intersecting edges with only the visible part (As described in Pre-processing action 2)_
+*_Replace intersecting edges with only the visible part (As described in Pre-processing action 2)_*
 
 Edge | 
 ------
@@ -154,7 +154,7 @@ R3 top edge will be shortened to start from right of R2 |
 R2 bottom edge will be shortened to end from left of R3|
 R3 bottom edge |
 
-_Pre-Processing:_ Extend the lower facing edges as possible on the X axis (As described in Pre-processing action 1)_
+*_Pre-Processing:_ Extend the lower facing edges as possible on the X axis (As described in Pre-processing action 1)_*
 
 Edge |
 ------
@@ -165,9 +165,22 @@ R3 top edge will be shortened to start from right of R2 |
 R2 bottom edge will be shortened to end from left of R3 extended by Ex3||
 R3 bottom edge extended by Ex4 and Ex5|
 
+*_Add the upper container edge to the beginning of the list_*
+*_Add the lower container edge to the end of the list_*
 
-Container top edge |  
-Container bottom edge |
+The final vertical edges list after pre-processing will look like:
+
+
+Edge | Type|
+-----|------|
+Container top edge |  Bottom |
+R1 top edge | Top |
+R1 bottom edge that is extended by Ex1 and Ex2 | Bottom |
+R2 top edge | Top |
+R3 top edge will be shortened to start from right of R2 | Top |
+R2 bottom edge will be shortened to end from left of R3 extended by Ex3| Bottom |
+R3 bottom edge extended by Ex4 and Ex5| Bottom |
+Container bottom edge | Top |
 
 
 
