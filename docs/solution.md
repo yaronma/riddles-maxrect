@@ -14,7 +14,7 @@ Note that actions 1 and 2 have O(n) complexity.
 
 ## Solution 1: Grid-Based Brute Force 
 ### Overview
-We will scan all the cell of the container and we will check for each cell what will be the biggest possible rectangle
+We will scan all the cells of the container and we will check for each cell what will be the biggest possible rectangle
 
 ### Description of Algorithm:
 Divide the container into a cells of size 1x1
