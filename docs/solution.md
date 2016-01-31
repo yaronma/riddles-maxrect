@@ -161,6 +161,7 @@ R2 bottom edge will be shortened to end from left of R3 extended by Ex3||
 R3 bottom edge extended by Ex4 and Ex5|
 
 *_Add the upper container edge to the beginning of the list_*
+
 *_Add the lower container edge to the end of the list_*
 
 The final vertical edges list after pre-processing will look like:
