@@ -198,4 +198,7 @@ The algorithm traversal is _O(N^2)_  -- In each step we scan the vertical edges 
 
 O(Algorithm) = _O(n*log(n))_ + _O(N^2)_ = _O(N^2)_
 
+### Thinking Further
+I Think that the complexity can be further reduced to O(N*log(N)) by building a search tree for the next and previous intersecting edge. And vy building a range-search tree. The rest of the algorithm will remain the same.
+
 **Note: This algorithm can be implied in any direction of scanning with minor adjustments.
