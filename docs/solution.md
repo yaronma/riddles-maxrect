@@ -82,7 +82,7 @@ The complexity of this algorithm is _O(N^4)_ Since for every point we scan maxim
 
 ## Solution 3: The Real Solution
 ### Overview
-This algorithm based on vertical swift of the lower edges of the rectangles until encountering a top edge or part of it.
+This algorithm based on horizontal swift of the lower edges of the rectangles until encountering a top edge or part of it.
 
 We have two pre-processing actions:
 
