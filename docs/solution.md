@@ -6,9 +6,9 @@ For all the algorithms that are presented here I offer to do the following pre-p
 
 1. Since we are interested and affected only by what happens inside the container, we will trim all the rectangles that are fully or partially located outside the container:
 
-2. Personally I prefer working where the container always starts at (0,0). This is acheived simply by shifting the container and the rectangles in the X and Y axises and shiting back the result.
+2. Personally I prefer working where the container always starts at (0,0). This is achieved simply by shifting the container and the rectangles in the X and Y axise and shifting back the result.
 
-3. I will mark the container coordinates with (Xcl, Xcr, Yct, Ycb) where the first letter is the axis, the seconds is 'c' for container and the last one is the dirction ('l'-left, 'r'-right, 't'-top, 'b'-bottom).
+3. I will mark the container coordinates with (Xcl, Xcr, Yct, Ycb) where the first letter is the axis, the seconds is 'c' for container and the last one is the direction ('l'-left, 'r'-right, 't'-top, 'b'-bottom).
 
 Note that actions 1 and 2 have O(n) complexity. 
 
@@ -22,12 +22,12 @@ Mark the maximum rectangle as size 0
 For each cell:
 - For all the rows staring from the row of the current cell and ending in the last row of the container
 - - Iterate from the cell X position to the container right edge
-- - If encountered a rectangle or the edge check new max and store coordinations
+- - If encountered a rectangle or the edge check new max and store coordinates
 
 ### A More Mathematical Definition
 
 ```javascript
-Divide the container into a cells of size 1x1. (This could simply acheivied by using two-dimentional array)
+Divide the container into a cells of size 1x1. (This could simply achievied by using two-dimensional array)
 
 mark max-rec as size 0
 for each cell (Xi, Yj) of the container:
@@ -44,7 +44,7 @@ for every line Yk from Yj to Ycb:
   // Check that the next cell is not inside a rectangle
   If cell (Xm+1, Yk) is inside a rectangle OR (m-i < max_legth)
   
-  // We reached a cell that is inside a rectange; 
+  // We reached a cell that is inside a rectangle; 
   // Check if we encountered a new rectangle
   if rectangle(Xi, Yj)-(Xm, Yk) > max-rec save it as max-rec
   mark max_length = m-i
@@ -87,7 +87,7 @@ This algorithm based on horizontal swift of the lower edges of the rectangles un
 We have two pre-processing actions:
 
 _**Pre-Processing Action 1:**_ For all the horizontal lower edges calculate the extended edge (extend the edge on both directions of the x-axis until encountering a rectangle or the container edge).
-In the following example we will extend edge E2 of rectangle R2 to the left (Extending by E2'). We will also extend E1 of R1 in both right and left directions by E1'' and E1' respectevly.  (There are more edges to process on the example)
+In the following example we will extend edge E2 of rectangle R2 to the left (Extending by E2'). We will also extend E1 of R1 in both right and left directions by E1'' and E1' respectively.  (There are more edges to process on the example)
 
 ![Image of breaking edge to visible parts](../images/algorithm3-2.png)
 
@@ -200,6 +200,6 @@ The algorithm traversal is _O(N^2)_  -- In each step we scan the vertical edges 
 O(Algorithm) = _O(n*log(n))_ + _O(N^2)_ = _O(N^2)_
 
 ### Thinking Further
-I Think that the complexity can be further reduced to O(N*log(N)) by building a search tree for the next and previous intersecting edge. And vy building a range-search tree. The rest of the algorithm will remain the same.
+I Think that the complexity can be further reduced to O(N*log(N)) by building a search tree for the next and previous intersecting edge. And by building a range-search tree. The rest of the algorithm will remain the same.
 
 **Note: This algorithm can be implied in any direction of scanning with minor adjustments.
