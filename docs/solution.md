@@ -27,7 +27,7 @@ For each cell:
 ### A More Mathematical Definition
 
 ```javascript
-Divide the container into a cells of size 1x1. (This could simply achievied by using two-dimensional array)
+Divide the container into a cells of size 1x1. (This could simply achieved by using two-dimensional array)
 
 mark max-rec as size 0
 for each cell (Xi, Yj) of the container:
